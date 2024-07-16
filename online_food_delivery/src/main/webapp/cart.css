@@ -1,0 +1,115 @@
+@charset "ISO-8859-1";
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   /*  background-color: #f4f4f4; */
+   background-image: url('IMAGES/menubodyimage.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Cart Items Container */
+.cart-items {
+    width: 50%;
+    margin: 0 auto;
+   /*  background: #fff; */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual Cart Item */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.cart-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.cart-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+.cart-item form {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item input[type="number"] {
+    width: 50px;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1em;
+    color: black;
+    background:none;
+}
+
+.update-btn, .remove-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.remove-btn {
+    background: #dc3545;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.add-more-items-btn {
+    background: #28a745;
+    width:40%;
+    padding: 10px auto;
+}
+
+.proceed-to-checkout-btn {
+    background: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* Empty Cart Message */
+.cart-items p {
+    text-align: center;
+    color: #999;
+    font-size: 1.1em;
+}
