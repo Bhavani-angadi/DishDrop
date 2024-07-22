@@ -11,7 +11,6 @@ public interface RestaurantDAO {
 	void updateRestaurant(Restaurant restaurant);
 	void deleteRestaurant(int restaurantId);
 	List<Restaurant> getAllRestaurants();
-	List<Restaurant> getRestaurantsByPage(int offset, int noOfRecords);
-    int getNoOfRecords();
+    
 
 }

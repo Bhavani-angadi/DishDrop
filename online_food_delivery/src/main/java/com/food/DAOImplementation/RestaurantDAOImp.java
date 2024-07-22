@@ -132,33 +132,8 @@ public class RestaurantDAOImp implements RestaurantDAO {
 		return al;
 	}
 	
-	@Override
-    public List<Restaurant> getRestaurantsByPage(int offset, int noOfRecords) {
-        List<Restaurant> restaurants = new ArrayList<>();
-        String sql = "SELECT SQL_CALC_FOUND_ROWS * FROM restaurant LIMIT ?, ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
-            pstmt.setInt(1, offset);
-            pstmt.setInt(2, noOfRecords);
-            try (ResultSet res = pstmt.executeQuery()) {
-                while (res.next()) {
-                    restaurants.add(extractRestaurantFromResultSet(res));
-                }
-            }
-            try (Statement stmt = connection.createStatement();
-                 ResultSet res = stmt.executeQuery("SELECT FOUND_ROWS()")) {
-                if (res.next()) {
-                    this.noOfRecords = res.getInt(1);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return restaurants;
-    }
+	
 
-    @Override
-    public int getNoOfRecords() {
-        return this.noOfRecords;
-    }
+
 
 }

@@ -111,6 +111,8 @@ public class OrderDAOImp implements OrderDAO {
 	private Order extractOrderFromResultSet(ResultSet res) throws SQLException {
 		Order order=new Order();
 		order.setOrderID(res.getInt("orderId"));
+		order.setUserId(res.getInt("userId"));
+		order.setRestaurantId(res.getInt("restaurantId"));
 		order.setOrderDate(res.getDate("orderDate"));
 		order.setTotalAmount(res.getDouble("totalAmount"));
 		order.setStatus(res.getString("status"));

@@ -48,8 +48,8 @@
             if (user != null) {
         %>
         <!-- Display when user is logged in -->
-        <a class="nav-item" href=""><i class="fas fa-shopping-cart"></i> Cart</a>
-        <a class="nav-item" href=""><i class="fas fa-history"></i> Order History</a>
+        <a class="nav-item" href="Cart"><i class="fas fa-shopping-cart"></i> Cart</a>
+        <a class="nav-item" href="OrderHistory"><i class="fas fa-history"></i> Order History</a>
          <div class="nav-item dropdown">
                     <a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user"></i> Profile</a>
                     <div class="dropdown-content">

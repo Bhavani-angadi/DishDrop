@@ -74,7 +74,7 @@ public class CartServlet extends HttpServlet {
 	private void updateCartItem(HttpServletRequest request, Cart cart)
 	{
 		int itemId=Integer.parseInt(request.getParameter("itemId"));
-		int quantity=Integer.parseInt("quantity");
+		int quantity=Integer.parseInt(request.getParameter("quantity"));
 		cart.updateItem(itemId, quantity);
 	}
 	

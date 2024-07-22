@@ -11,23 +11,30 @@ public class Cart {
     }
 
     public void addItem(CartItem item) {
-        int menuId = item.getMenuId();
-        if (items.containsKey(menuId)) {
-            CartItem existingItem = items.get(menuId);
+        int itemId = item.getCartItemId();
+        if (items.containsKey(itemId)) {
+            CartItem existingItem = items.get(itemId);
             existingItem.setQuantity(existingItem.getQuantity() + item.getQuantity());
         } else {
-            items.put(menuId, item);
+            items.put(itemId, item);
         }
     }
 
-    public void updateItem(int menuId, int quantity) {
-        if (items.containsKey(menuId)) {
-            CartItem item = items.get(menuId);
-            item.setQuantity(quantity);
+    public void updateItem(int cartItemId, int quantity) {
+    	if (items.containsKey(cartItemId)) {
+            if (quantity <= 0) {
+                items.remove(cartItemId);
+            } else {
+                items.get(cartItemId).setQuantity(quantity);
+            }
         }
     }
 
-    public void removeItem(int menuId) {
-        items.remove(menuId);
+    public void removeItem(int cartItemId) {
+        items.remove(cartItemId);
+    }
+    
+    public void clear() {
+        items.clear();
     }
 }

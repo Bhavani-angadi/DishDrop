@@ -25,11 +25,10 @@
 				<%=item.getPrice()%></p>
 			<form action="Cart" method="post">
 				<input type="hidden" name="itemId" value="<%=item.getCartItemId()%>">
-				<label>Quantity: <input type="number" name="quantity"
-					value="<%=item.getQuantity()%>" min="1">
-				</label> <input type="submit" name="action" value="update"
-					class="update-btn"> <input type="submit" name="action"
-					value="remove" class="remove-btn">
+				<label>Quantity: <input type="number" name="quantity" value="<%=item.getQuantity()%>" min="1">
+				</label> 
+				<input type="submit" name="action" value="update" class="update-btn"> 
+				<input type="submit" name="action" value="remove" class="remove-btn">
 			</form>
 		</div>
 		<%

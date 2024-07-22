@@ -40,28 +40,29 @@ public class OrderItemDAOImp implements OrderItemDAO {
 	}
 
 	@Override
-	public OrderItem getOrderItem(int orderItemId) {
-		String sql="SELECT * FROM `orderitem` WHERE `orderitemId`=?";
-		OrderItem orderItem=null;
+	public List<OrderItem> getOrderItem(int orderId) {
+		String sql="SELECT * FROM `orderitem` WHERE `orderId`=?";
+		List<OrderItem> al=new ArrayList<OrderItem>();
 		try {
 			PreparedStatement pstmt=connection.prepareStatement(sql);
-			pstmt.setInt(1, orderItemId);
+			pstmt.setInt(1, orderId);
 			ResultSet res=pstmt.executeQuery();
 			
-			if(res.next())
+			while(res.next())
 			{
-				orderItem=extractOrderItemFromResultSet(res);
+				al.add(extractOrderItemFromResultSet(res));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return orderItem;
+		return al;
 	}
 
 	private OrderItem extractOrderItemFromResultSet(ResultSet res) throws SQLException {
 		OrderItem orderItem=new OrderItem();
 		orderItem.setOrderItemId(res.getInt("orderItemId"));
 		orderItem.setOrderId(res.getInt("orderId"));
+		orderItem.setItemName(res.getString("itemName"));
 		orderItem.setMenuId(res.getInt("menuId"));
 		orderItem.setQuantity(res.getInt("quantity"));
 		orderItem.setItemTotal(res.getDouble("itemTotal"));
